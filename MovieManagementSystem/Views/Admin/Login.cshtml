@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null; 
+}
+
+@model MovieManagementSystem.Models.Admin
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - MovieManagementSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center d-flex justify-content-center align-items-center vh-100">
+            <div class="col-md-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-3 text-center">
+                        <h2 class="fw-bold mb-2 text-uppercase"> Admin Login</h2>
+                        <p class="text-white-50 mb-5">Please enter your Id , Name and password!</p>
+
+                        <form asp-action="Login" method="post">
+                            <div asp-validation-summary="All"></div>
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="Id">ID</label>
+                                <input asp-for="Id" class="form-control form-control-lg" />
+                                <span asp-validation-for="Id" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="Name">Name</label>
+                                <input asp-for="Name" class="form-control form-control-lg" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="Password">Password</label>
+                                <input asp-for="Password" type="password" class="form-control form-control-lg" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
